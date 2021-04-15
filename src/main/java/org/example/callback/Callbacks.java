@@ -2,7 +2,7 @@ package org.example.callback;
 
 import java.util.function.Consumer;
 
-public class Main {
+public class Callbacks {
 
     public static void main(String[] args) {
 

@@ -6,3 +6,5 @@
 * Streams
 * Optionals
 * Combinator pattern
+* Callbacks
+* Lambdas
