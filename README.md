@@ -5,3 +5,4 @@
 * Supplier  
 * Streams
 * Optionals
+* Combinator pattern
