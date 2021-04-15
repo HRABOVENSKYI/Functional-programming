@@ -1,9 +1,11 @@
-package org.example.imperative;
+package org.example.beginning.declarative;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
-import static org.example.imperative.Main.Gender.*;
+import static org.example.beginning.declarative.Main.Gender.FEMALE;
+import static org.example.beginning.declarative.Main.Gender.MALE;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,20 +17,16 @@ public class Main {
             new Person("Alice", FEMALE)
         );
 
-        System.out.println("***Imperative approach***");
+        System.out.println("***Declarative approach***");
 
         // Find and log all females
-        List<Person> females = new ArrayList<>();
+        Predicate<Person> personPredicate = person -> person.gender.equals(FEMALE);
 
-        for (Person person : people) {
-            if (person.gender.equals(FEMALE)) {
-                females.add(person);
-            }
-        }
+        List<Person> females = people.stream()
+                .filter(personPredicate)
+                .collect(Collectors.toList());
 
-        for (Person female : females) {
-            System.out.println(female);
-        }
+        females.forEach(System.out::println);
     }
 
     static class Person {
